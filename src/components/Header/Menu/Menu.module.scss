@@ -1,0 +1,42 @@
+@use '../../../styles/importer' as *;
+
+.menu {
+    &__list {
+        display: flex;
+        gap: 40px;
+        font-size: 20px;
+
+        @include desktop() {
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        @include tablet() {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        transition: 0.2s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            translate: -50%;
+            width: 0;
+            height: 5px;
+            background-color: $color-green;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

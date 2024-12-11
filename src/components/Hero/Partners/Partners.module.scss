@@ -1,0 +1,44 @@
+@use '../../../styles/importer' as *;
+
+.partners {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    @include tablet {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    &__item {
+        max-width: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: grayscale(1);
+
+        @include tablet {
+            max-width: 115px;
+
+            &:nth-child(-n + 3) {
+                transform: translateX(30px);
+            }
+
+            &:nth-child(n + 4) {
+                transform: translateX(-30px); // Сдвиг влево
+            }
+        }
+
+        @include mobile-s {
+            max-width: 80px;
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+}

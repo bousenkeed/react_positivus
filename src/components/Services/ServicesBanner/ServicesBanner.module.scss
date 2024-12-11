@@ -1,0 +1,36 @@
+@use '../../../styles/importer' as *;
+
+.ServicesBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-radius: 45px;
+    background-color: $color-grey;
+    padding: 50px;
+
+    &__body {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 26px;
+        color: $color-black;
+
+        @include mobile-s {
+            align-items: stretch
+        }
+
+        & p {
+            @include fluid-text(16, 18);
+        }
+    }
+
+    &__image {
+        margin: -75px 0;
+
+        @include mobile {
+            display: none;
+        }
+    }
+}

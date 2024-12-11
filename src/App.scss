@@ -1,0 +1,21 @@
+@use './styles/importer' as *;
+
+.app {
+    max-width: $desktop;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-Y-desktop;
+
+    @include tablet {
+        gap: $gap-Y-tablet;
+    }
+
+    @include mobile {
+        gap: $gap-Y-mobile;
+    }
+}

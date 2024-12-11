@@ -1,0 +1,20 @@
+@use '../../../styles/importer' as *;
+
+.ServicesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: $title-gap-Y-desctop;
+    margin-bottom: 100px;
+
+    @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: $title-gap-Y-tablet;
+        margin-bottom: 85px;
+    }
+
+    @include mobile {
+        margin-top: $title-gap-Y-mobile;
+        margin-bottom: 70px;
+    }
+}

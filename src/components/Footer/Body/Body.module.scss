@@ -1,0 +1,112 @@
+@use '../../../styles/importer' as *;
+
+.footer__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    @include tablet {
+        flex-direction: column;
+        gap: 37px;
+        width: 100%;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 332px;
+        line-height: 1.4;
+
+        @include tablet {
+            align-items: center;
+            text-align: center;
+        }
+
+        & h2 {
+            color: $color-black;
+            margin-bottom: 27px;
+            background-color: $color-green;
+            border-radius: 7px;
+            padding: 0 7px;
+
+            @include fluid-text(18, 20);
+        }
+
+        & address {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-style: normal;
+        }
+
+        & span {
+            @include fluid-text(16, 18);
+        }
+    }
+
+    &__subscribe {
+        background-color: #292a32;
+        padding: 58px 40px;
+        border-radius: 14px;
+        flex-grow: 1;
+        display: flex;
+        gap: 20px;
+        max-width: 634px;
+        justify-content: space-between;
+
+        @include desktop {
+            flex-direction: column;
+            max-width: 500px;
+        }
+
+        @include tablet {
+            padding: 30px;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        &__input {
+            border-radius: 14px;
+            padding: 22px;
+            background-color: transparent;
+            outline: 1px solid $color-ligth;
+            color: $color-ligth;
+            flex-grow: 1;
+            transition: 0.2s;
+
+            @include fluid-text(16, 18);
+
+            &:hover {
+                background-color: $color-grey;
+                outline-color: transparent;
+                color: $color-black;
+            }
+
+            &:focus {
+                background-color: $color-grey;
+                color: $color-black;
+                outline-color: $color-green;
+            }
+        }
+
+        &__button {
+            background-color: $color-green;
+            font-size: 20px;
+            border-radius: 14px;
+            padding: 20px 35px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: none;
+
+            &:hover {
+                background-color: $color-grey;
+            }
+        }
+    }
+}

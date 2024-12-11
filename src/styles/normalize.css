@@ -80,6 +80,7 @@ pre {
 a {
     background-color: transparent;
     color: inherit;
+    text-decoration: none;
 }
 
 /**
@@ -169,7 +170,6 @@ select,
 textarea {
     font-family: inherit; /* 1 */
     font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
 }
 
@@ -353,4 +353,8 @@ template {
 
 [hidden] {
     display: none;
+}
+
+li {
+    list-style-type: none;
 }

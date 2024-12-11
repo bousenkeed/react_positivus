@@ -1,0 +1,42 @@
+@use '../../../styles/importer' as *;
+
+.studiesCard{
+    background-color: $color-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+        border-radius: 45px;
+        padding: 42px 50px;
+        max-width: 350px;
+        flex: 0 0 auto;
+    }
+
+    & p {
+        margin-bottom: 20px;
+        color: $color-ligth;
+        @include fluid-text(16, 18);
+    }
+
+    & a {
+        color: $color-green;
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        
+        &:hover {
+            color: $color-ligth;
+    
+            svg path {
+                fill: $color-ligth;
+            }
+        }
+
+        & span {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+    }
+    
+}

@@ -1,0 +1,58 @@
+@use '../../../styles/importer' as *;
+
+.BurgerButton {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+        width: 100%;
+        height: 3px;
+        background-color: $color-black;
+        border-radius: 2px;
+        position: absolute;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: $color-black;
+            border-radius: 2px;
+            top: -10px;
+            transition: transform 0.3s, top 0.3s;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: $color-black;
+            border-radius: 2px;
+            bottom: -10px;
+            transition: transform 0.3s, bottom 0.3s;
+        }
+    }
+
+    &.active {
+        span {
+            background-color: transparent;
+        }
+
+        span::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        span::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@use '../../../styles/importer' as *;
+
+.footer__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 37px;
+    margin-bottom: 65px;
+
+    @include tablet {
+        flex-direction: column;
+        margin-bottom: 37px;
+    }
+
+    @include mobile {
+        display: contents;
+    }
+
+    &__logo {
+        display: inline-flex;
+        max-width: 180px;
+        height: fit-content;
+
+        @include mobile {
+            max-width: 144px;
+        }
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: 40px;
+
+        @include mobile {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+        & a {
+            text-decoration: underline;
+            transition: 0.2s;
+
+            @include fluid-text(16, 18);
+
+            &:hover {
+                color: $color-green;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 20px;
+
+        @include mobile {
+            order: 1;
+        }
+
+        & a {
+            display: flex;
+            align-items: center;
+        }
+
+        & svg circle,
+        & a:nth-of-type(2) svg path {
+            transition: 0.2s;
+        }
+
+        & a svg:hover circle,
+        & a:nth-of-type(2) svg:hover path {
+            fill: $color-green;
+        }
+    }
+}

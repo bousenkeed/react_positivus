@@ -1,0 +1,46 @@
+@use '../../../styles/importer' as *;
+
+.radioGroup {
+    display: flex;
+    gap: 35px;
+}
+
+.radioOption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    & label {
+        display: flex;
+        gap: 14px;
+        cursor: pointer;
+    }
+
+    .radioInput {
+        display: none;
+    }
+
+    .customRadio {
+        width: 28px;
+        height: 28px;
+        border: 1px solid $color-black;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+    .radioInput:checked + .customRadio::before {
+        background-color: #b9ff66; // Внутренний кружок отображается
+    }
+}

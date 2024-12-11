@@ -1,0 +1,66 @@
+@use '../../styles/importer' as *;
+
+.header {
+    margin: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include paddings;
+
+    @include desktop() {
+        margin: 30px 0;
+        gap: 20px;
+    }
+
+    &__logo {
+        display: flex;
+        height: 100%;
+        margin-right: auto;
+
+        img {
+            width: 100%;
+        }
+        @include desktop() {
+            max-width: 144px;
+        }
+    }
+}
+
+.button {
+    @include desktop() {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    @include tablet() {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    @include mobile() {
+        display: none;
+    }
+}
+
+.menu {
+    @include mobile() {
+        display: none;
+    }
+}
+
+.burgerButton {
+    display: none;
+
+    @include mobile {
+        display: flex;
+    }
+}
+
+.menuMobile {
+    display: none;
+    @include mobile {
+        display: block;
+    }
+}

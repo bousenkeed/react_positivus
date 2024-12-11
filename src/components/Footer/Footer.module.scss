@@ -1,0 +1,65 @@
+@use '../../styles/importer' as *;
+
+.footer {
+    margin-top: 140px;
+
+    @include paddings;
+
+    @include tablet {
+        margin-top: 115px;
+    }
+
+    @include mobile {
+        margin: 90px 0 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__inner {
+        background-color: $color-dark;
+        color: $color-ligth;
+        padding: 55px 60px 50px;
+        border-radius: 45px 45px 0 0;
+
+        @include mobile {
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 37px;
+            padding: 50px 20px 30px;
+        }
+    }
+}
+
+.footer__bottom {
+    padding-top: 50px;
+    border-top: 1px solid $color-ligth;
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    @include fluid-text(16, 18);
+
+    @include tablet {
+        padding-top: 37px;
+        margin-top: 37px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        text-align: center;
+        order: 2;
+        gap: 15px;
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    & a {
+        text-decoration: underline;
+        transition: 0.2s;
+
+        &:hover {
+            color: $color-green;
+        }
+    }
+}

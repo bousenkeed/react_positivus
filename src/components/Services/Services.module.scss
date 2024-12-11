@@ -1,0 +1,5 @@
+@use '../../styles/importer' as *;
+
+.services {
+    @include paddings;
+}

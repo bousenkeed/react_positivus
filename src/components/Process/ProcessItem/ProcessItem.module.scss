@@ -1,0 +1,105 @@
+@use '../../../styles/importer' as *;
+
+.processItem {
+    padding: 40px 60px;
+    background-color: $color-grey;
+    border: 1px solid $color-dark;
+    border-radius: 45px;
+    box-shadow: 0 5px 0 0 $color-dark;
+
+    @include tablet {
+        padding: 30px;
+    }
+
+    &.active {
+        background-color: $color-green;
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        z-index: 5;
+        background-color: inherit;
+
+        @include mobile-s {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__number {
+        font-weight: 500;
+        font-size: 60px;
+        color: $color-black;
+        line-height: 1.2;
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+
+    & h3 {
+        @include fluid-text(18, 30);
+    }
+
+    &__toggleButton {
+        margin-left: auto;
+        border-radius: 50%;
+        background-color: $color-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+
+        @include mobile-s {
+            margin: 0;
+        }
+
+        & .plus {
+            padding: 15px;
+        }
+
+        & .minus {
+            padding: 24px 19px;
+        }
+
+        &:hover {
+            background-color: $color-ligth;
+        }
+
+        &:hover img {
+            transform: scale(1.3);
+        }
+
+        img {
+            transition: transform 0.2s;
+        }
+    }
+
+    &__description {
+        z-index: 1;
+
+        @include fluid-text(16, 18);
+
+        overflow: hidden;
+        padding-top: 0;
+        border-top: none;
+        transform: translateY(-30px);
+        visibility: hidden;
+        max-height: 0px;
+        transition: 0.4s ease-out;
+        height: auto;
+
+        &.active {
+            border-top: 1px solid $color-black;
+            padding-top: 30px;
+            margin-top: 30px;
+            transform: translateY(0);
+            visibility: visible;
+            max-height: 300px;
+        }
+    }
+}

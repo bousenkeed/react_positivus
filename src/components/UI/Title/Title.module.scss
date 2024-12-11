@@ -1,0 +1,36 @@
+@use '../../../styles/importer' as *;
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: $color-black;
+
+    @include mobile {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: 400;
+        background-color: $color-green;
+        padding: 0 7px;
+        border-radius: 7px;
+        white-space: nowrap;
+
+        @include mobile {
+            white-space: wrap;
+        }
+    }
+
+    p {
+        max-width: 580px;
+
+        @include fluid-text(16, 18);
+
+        @include mobile {
+            line-height: 1.5;
+        }
+    }
+}

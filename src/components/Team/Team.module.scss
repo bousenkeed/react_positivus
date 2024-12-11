@@ -1,0 +1,117 @@
+@use '../../styles/importer' as *;
+
+.team {
+    display: flex;
+    flex-direction: column;
+
+    @include paddings;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: $title-gap-Y-desctop;
+        margin-bottom: 40px;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: $title-gap-Y-tablet;
+        }
+
+        @include mobile {
+            margin-top: $title-gap-Y-mobile;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.worker {
+    border: 1px solid $color-dark;
+    border-radius: 45px;
+    padding: 40px 35px;
+    box-shadow: 0 5px 0 0 $color-dark;
+    background: $color-ligth;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid $color-black;
+
+        @include mobile {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__avatar {
+        min-width: 103px;
+        max-height: 103px;
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__link {
+        margin-left: auto;
+
+        &:hover svg path {
+            fill: $color-black;
+        }
+
+        &:hover button {
+            background-color: $color-green;
+        }
+
+        & button {
+            border-radius: 50%;
+            background-color: $color-black;
+            padding: 7px 9px 5px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    &__deteils {
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & span {
+            @include fluid-text(16, 18);
+        }
+    }
+
+    &__experience {
+        padding-top: 28px;
+
+        @include fluid-text(16, 18);
+
+        @include mobile {
+            padding-top: 20px;
+        }
+    }
+}
+
+.title {
+    & p {
+        max-width: 473px;
+    }
+}
+
+.button {
+    align-self: flex-end;
+    padding: 20px 76px;
+
+    @include mobile {
+        align-self: stretch;
+    }
+}

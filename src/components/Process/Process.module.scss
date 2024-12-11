@@ -1,0 +1,27 @@
+@use '../../styles/importer' as *;
+
+.process {
+    
+    @include paddings;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: $title-gap-Y-desctop;
+
+        @include tablet {
+            margin-top: $title-gap-Y-tablet;
+        }
+
+        @include mobile {
+            margin-top: $title-gap-Y-mobile;
+        }
+    }
+}
+
+.titleWidth {
+    & p {
+        max-width: 292px;
+    }
+}

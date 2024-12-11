@@ -1,0 +1,32 @@
+@use '../../styles/importer' as *;
+
+.studies {
+    
+    @include paddings;
+
+    &__cards {
+        display: flex;
+        margin-top: $title-gap-Y-desctop;
+        background-color: $color-dark;
+        border-radius: 45px;
+        padding: 70px 60px;
+        gap: 40px;
+
+        @include tablet {
+            margin-top: $title-gap-Y-tablet;
+        }
+
+        @include mobile {
+            background-color: transparent;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 0;
+            margin-top: $title-gap-Y-mobile;
+        }
+
+        & > :not(:last-child) {
+            border-right: 1px solid $color-ligth;
+            padding-right: 40px;
+        }
+    }
+}
